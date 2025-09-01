@@ -222,6 +222,7 @@ colnames(counts.aldex)
 conds <- c(grupo1$Genotype, grupo2$Genotype)
 str(conds)
 # Run ALDEx2:
+set.seed(1234)
 x.all <- ALDEx2::aldex(counts.aldex, conds, mc.samples=256, test="t", effect=TRUE,
                        include.sample.summary=FALSE, denom="all", verbose=TRUE, paired.test=FALSE)
 # Get results (DAOs below an FDR = 10%):
